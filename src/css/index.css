@@ -1,0 +1,59 @@
+.layout {
+    display: grid;
+    gap: 4px;
+    grid-template-rows: 40px 40px auto 60px 60px 40px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'header'
+        'sidebar'
+        'main'
+        'widget'
+        'statistics'
+        'footer';
+    height: 100vh;
+}
+
+@media (min-width: 400px) {
+    .layout {
+        display: grid;
+        grid-template-rows: 40px auto 80px 40px;
+        grid-template-columns: 160px auto auto;
+        grid-template-areas:
+            'header header header'
+            'sidebar main main'
+            'sidebar widget statistics'
+            'footer footer footer';
+    }
+}
+
+header {
+    grid-area: header;
+    background-color: red;
+}
+
+footer {
+    grid-area: footer;
+    background-color: yellowgreen;
+}
+
+nav {
+    grid-area: sidebar;
+    background-color: turquoise;
+}
+
+main {
+    grid-area: main;
+    background-color: tan;
+}
+
+.widget {
+    grid-area: widget;
+    background-color: chocolate;
+    /* width: 100%; */
+}
+
+.statistics {
+    grid-area: statistics;
+    background-color: aqua;
+    /* width: 100%; */
+}
